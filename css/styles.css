@@ -1,3 +1,12 @@
+.hero-banner {
+  background: url(../img/pexels-mikhail-nilov-7827819.webp);
+  background-size: cover;
+  background-position: center;
+}
 
+.login-icon svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
 
 /*# sourceMappingURL=styles.css.map */

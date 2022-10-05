@@ -1,4 +1,17 @@
 $footer-bkgd-clr: #b793b4;
 $content-bkgd-clr: #d2d6a0;
-$text-clr-one: #ffffff;
-$text-clr-two: #323232;
+$content-bkgd-clr-two: #f4f4f2;
+$clr-one: #ffffff;
+$-clr-two: #323232;
+
+.hero-banner {
+  background: url(../img/pexels-mikhail-nilov-7827819.webp);
+  background-size: cover;
+  background-position: center;
+}
+
+.login-icon svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
+  // fill: $clr-one;
+}
