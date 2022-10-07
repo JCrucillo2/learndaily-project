@@ -13,6 +13,10 @@ body {
   font-family: sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 113.75rem;
   margin: 0 auto;
@@ -27,7 +31,7 @@ body {
 }
 
 .hero-section {
-  padding: 0 0.625rem;
+  padding: 0 3%;
   background: url(../img/pexels-mikhail-nilov-7827819.webp);
   background-size: cover;
   background-position: center;
@@ -37,7 +41,7 @@ body {
   .learn-daily {
     font-family: $font-1;
     position: relative;
-    top: 16rem;
+    top: 14rem;
     h2 {
       font-size: 2.5rem;
     }
@@ -50,11 +54,24 @@ body {
       a {
         border: 0.0625rem solid $clr-one;
         border-radius: 3.125rem;
-        padding: 0.625rem 1rem;
+        padding: 0.625rem;
         display: flex;
         align-items: center;
         justify-content: center;
         gap: 0.625rem;
+        color: $clr-one;
+        font-family: $font-2;
+        transition: all 0.3s ease;
+        svg {
+          fill: $clr-one;
+        }
+        &:hover {
+          color: $content-hover-clr;
+          background-color: $clr-one;
+          svg {
+            fill: $content-hover-clr;
+          }
+        }
       }
     }
   }
@@ -74,14 +91,13 @@ svg {
     font-family: $font-2;
     font-size: 1.125rem;
     color: $clr-one;
-    text-decoration: none;
   }
 }
 
 .bar {
   display: block;
-  width: 1.5625rem;
-  height: 0.1875rem;
+  width: 1.875rem;
+  height: 0.3125rem;
   margin: 0.3125rem auto;
   transition: all 0.3s ease-in-out;
   background-color: $clr-one;
@@ -90,7 +106,7 @@ svg {
 
 nav {
   min-width: 100%;
-  background-color: $content-bkgd-clr-three;
+  background-color: rgba(187, 138, 207, 0.8);
   position: absolute;
   left: -100%;
   top: 5rem;
@@ -102,7 +118,6 @@ nav {
       text-align: center;
       a {
         color: $clr-one;
-        text-decoration: none;
         font-family: $font-1;
         font-size: 2.25rem;
         transition: all 0.3s ease;
@@ -129,8 +144,23 @@ nav {
   opacity: 0;
 }
 .active .nav-toggler span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(10px) rotate(45deg);
 }
 .active .nav-toggler span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+// knowledge section
+.knowledge-section {
+  text-align: center;
+  padding: 3%;
+  margin: 1.125rem 0;
+  svg {
+    fill: #62a7ae;
+    width: 1.875rem;
+    height: 100%;
+  }
+  p {
+    font-family: $font-3;
+  }
 }
