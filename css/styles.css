@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  color: #323232;
 }
 
 a {
@@ -148,6 +149,69 @@ nav ul li a:hover {
 }
 .knowledge-section p {
   font-family: "Libre Baskerville", serif;
+}
+
+.grid-container {
+  background-color: #f4f4f2;
+}
+.grid-container .grid-items .grid-content {
+  padding: 3%;
+}
+.grid-container .grid-items .grid-content p:nth-child(1) {
+  font-family: "Libre Baskerville", serif;
+  font-size: clamp(1rem, 3vw, 2.25rem);
+}
+.grid-container .grid-items .grid-content p:nth-child(3) {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: clamp(1rem, 3vw, 1.3125rem);
+}
+.grid-container .grid-items .grid-content h2 {
+  font-family: "Work Sans", sans-serif;
+  font-size: clamp(1.75rem, 3vw, 5rem);
+  text-transform: uppercase;
+}
+
+.quiz {
+  background-color: #d2d6a0;
+}
+.quiz div {
+  padding: 2rem 3%;
+}
+.quiz div div {
+  text-align: center;
+}
+.quiz div div h3 {
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: clamp(1.5rem, 4vw, 5rem);
+}
+.quiz div div p {
+  font-family: "Libre Baskerville", serif;
+}
+.quiz div div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  border: 0.0625rem solid #ffffff;
+  border-radius: 3.125rem;
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  transition: all 0.3s ease;
+  font-family: "Source Sans Pro", sans-serif;
+  text-transform: uppercase;
+}
+.quiz div div a svg {
+  fill: #ffffff;
+}
+.quiz div div a:hover {
+  color: #323232;
+  background-color: #ffffff;
+}
+.quiz div div a:hover svg {
+  fill: #323232;
 }
 
 /*# sourceMappingURL=styles.css.map */

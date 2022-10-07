@@ -11,6 +11,7 @@ $font-3: "Libre Baskerville", serif;
 
 body {
   font-family: sans-serif;
+  color: $clr-two;
 }
 
 a {
@@ -162,5 +163,74 @@ nav {
   }
   p {
     font-family: $font-3;
+  }
+}
+
+// grid contain section
+.grid-container {
+  background-color: $content-bkgd-clr-two;
+  .grid-items {
+    .grid-content {
+      padding: 3%;
+      p {
+        &:nth-child(1) {
+          font-family: $font-3;
+          font-size: clamp(1rem, 3vw, 2.25rem);
+        }
+        &:nth-child(3) {
+          font-family: $font-2;
+          font-size: clamp(1rem, 3vw, 1.3125rem);
+        }
+      }
+      h2 {
+        font-family: $font-1;
+        font-size: clamp(1.75rem, 3vw, 5rem);
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// quiz section
+.quiz {
+  background-color: #d2d6a0;
+  div {
+    padding: 2rem 3%;
+    div {
+      text-align: center;
+      h3 {
+        font-family: $font-1;
+        text-transform: uppercase;
+        color: $clr-one;
+        font-size: clamp(1.5rem, 4vw, 5rem);
+      }
+      p {
+        font-family: $font-3;
+      }
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        color: $clr-one;
+        border: 0.0625rem solid $clr-one;
+        border-radius: 3.125rem;
+        padding: 0.625rem;
+        margin-top: 0.625rem;
+        transition: all 0.3s ease;
+        font-family: $font-2;
+        text-transform: uppercase;
+        svg {
+          fill: $clr-one;
+        }
+        &:hover {
+          color: $clr-two;
+          background-color: $clr-one;
+          svg {
+            fill: $clr-two;
+          }
+        }
+      }
+    }
   }
 }
