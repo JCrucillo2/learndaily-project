@@ -10,8 +10,15 @@ $font-2: "Source Sans Pro", sans-serif;
 $font-3: "Libre Baskerville", serif;
 
 body {
-  font-family: sans-serif;
+  font-family: $font-2, sans-serif;
   color: $clr-two;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-1;
+  text-transform: uppercase;
 }
 
 a {
@@ -151,6 +158,20 @@ nav {
   transform: translateY(-10px) rotate(-45deg);
 }
 
+.login-icon {
+  transition: all 0.3s ease;
+  svg {
+    fill: $clr-one;
+  }
+  &:hover {
+    color: $content-hover-clr;
+    background-color: $clr-one;
+    svg {
+      fill: $content-hover-clr;
+    }
+  }
+}
+
 // knowledge section
 .knowledge-section {
   text-align: center;
@@ -229,6 +250,44 @@ nav {
           svg {
             fill: $clr-two;
           }
+        }
+      }
+    }
+  }
+}
+
+// courses section
+.courses {
+  .search-area {
+    margin: 2rem 0;
+    padding: 0 3%;
+    h2 {
+      padding-bottom: 0.75rem;
+      text-transform: uppercase;
+      font-size: clamp(1.75rem, 3vw, 5rem);
+    }
+    div {
+      p {
+        padding-bottom: 0.75rem;
+      }
+      label {
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0.625rem;
+          top: 0;
+          bottom: 0;
+          width: 1.5625rem;
+          background: url(../img/search-svgrepo-com.svg) center / contain
+            no-repeat;
+        }
+        input {
+          border-radius: 3.125rem;
+          border: 0.125rem solid #745669;
+          padding: 0.5rem 2rem;
+          width: 100%;
+          outline: none;
         }
       }
     }

@@ -1,6 +1,13 @@
 body {
-  font-family: sans-serif;
+  font-family: "Source Sans Pro", sans-serif, sans-serif;
   color: #323232;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Work Sans", sans-serif;
+  text-transform: uppercase;
 }
 
 a {
@@ -137,6 +144,20 @@ nav ul li a:hover {
   transform: translateY(-10px) rotate(-45deg);
 }
 
+.login-icon {
+  transition: all 0.3s ease;
+}
+.login-icon svg {
+  fill: #ffffff;
+}
+.login-icon:hover {
+  color: #b793b4;
+  background-color: #ffffff;
+}
+.login-icon:hover svg {
+  fill: #b793b4;
+}
+
 .knowledge-section {
   text-align: center;
   padding: 3%;
@@ -212,6 +233,38 @@ nav ul li a:hover {
 }
 .quiz div div a:hover svg {
   fill: #323232;
+}
+
+.courses .search-area {
+  margin: 2rem 0;
+  padding: 0 3%;
+}
+.courses .search-area h2 {
+  padding-bottom: 0.75rem;
+  text-transform: uppercase;
+  font-size: clamp(1.75rem, 3vw, 5rem);
+}
+.courses .search-area div p {
+  padding-bottom: 0.75rem;
+}
+.courses .search-area div label {
+  position: relative;
+}
+.courses .search-area div label::before {
+  content: "";
+  position: absolute;
+  left: 0.625rem;
+  top: 0;
+  bottom: 0;
+  width: 1.5625rem;
+  background: url(../img/search-svgrepo-com.svg) center/contain no-repeat;
+}
+.courses .search-area div label input {
+  border-radius: 3.125rem;
+  border: 0.125rem solid #745669;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  outline: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
