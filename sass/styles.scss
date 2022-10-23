@@ -9,9 +9,16 @@ $font-1: "Work Sans", sans-serif;
 $font-2: "Source Sans Pro", sans-serif;
 $font-3: "Libre Baskerville", serif;
 
+// breakpoints
+$medium: 48rem;
+$large: 68.75rem;
+$xlarge: 93.75rem;
+
 body {
   font-family: $font-2, sans-serif;
   color: $clr-two;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 h1,
@@ -51,9 +58,14 @@ a {
     position: relative;
     top: 14rem;
     h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 11.6vw, 13.25rem);
     }
     div {
+      @media screen and (min-width: $medium) {
+        display: flex;
+        gap: 2rem;
+        margin-left: 10%;
+      }
       p {
         font-family: $font-1;
         font-size: 1.625rem;
@@ -119,20 +131,42 @@ nav {
   left: -100%;
   top: 5rem;
   transition: all 0.3s ease;
-  ul {
+  @media screen and (min-width: $medium) {
+    position: static;
+    min-width: 0;
+    background-color: transparent;
+  }
+  .nav-menu {
     padding: 0;
     list-style-type: none;
+    @media screen and (min-width: $medium) {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
     li {
       text-align: center;
+      &:nth-child(6) {
+        @media screen and (min-width: $medium) {
+          a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+          }
+        }
+      }
       a {
         color: $clr-one;
         font-family: $font-1;
-        font-size: 2.25rem;
+        font-size: clamp(1rem, 1.9vw, 2.25rem);
         transition: all 0.3s ease;
         display: block;
         &:hover {
           background-color: $clr-one;
           color: $content-hover-clr;
+          @media screen and (min-width: $medium) {
+            border-radius: 0.1875rem;
+          }
         }
       }
     }
@@ -141,6 +175,9 @@ nav {
 
 .nav-toggler {
   cursor: pointer;
+  @media screen and (min-width: $medium) {
+    display: none;
+  }
 }
 
 .active nav {
@@ -190,7 +227,20 @@ nav {
 // grid contain section
 .grid-container {
   background-color: $content-bkgd-clr-two;
+  @media screen and (min-width: $large) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, auto);
+    gap: 1rem;
+  }
   .grid-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, max-content));
+    &:nth-child(1) {
+      @media screen and (min-width: $large) {
+        display: flex;
+      }
+    }
     .grid-content {
       padding: 3%;
       p {
@@ -215,8 +265,29 @@ nav {
 // quiz section
 .quiz {
   background-color: #d2d6a0;
-  div {
+  .quiz-flex {
     padding: 2rem 3%;
+    @media screen and (min-width: $medium) {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      padding: 4rem 3%;
+    }
+    .quiz-take {
+      @media screen and (min-width: $medium) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 1;
+        align-items: center;
+        flex-basis: 50%;
+      }
+      p {
+        @media screen and (min-width: $medium) {
+          margin: 0;
+        }
+      }
+    }
     div {
       text-align: center;
       h3 {
@@ -227,6 +298,8 @@ nav {
       }
       p {
         font-family: $font-3;
+        font-size: clamp(1.2rem, 1.9vw, 2.25rem);
+        margin-bottom: 1rem;
       }
       a {
         display: flex;
@@ -241,6 +314,10 @@ nav {
         transition: all 0.3s ease;
         font-family: $font-2;
         text-transform: uppercase;
+        @media screen and (min-width: $medium) {
+          width: 15.625rem;
+          margin: 1rem auto;
+        }
         svg {
           fill: $clr-one;
         }
@@ -267,11 +344,23 @@ nav {
       font-size: clamp(1.75rem, 3vw, 5rem);
     }
     div {
+      @media screen and (min-width: $medium) {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+      }
       p {
         padding-bottom: 0.75rem;
+
+        @media screen and (min-width: $medium) {
+          width: 40.625rem;
+        }
       }
       label {
         position: relative;
+        @media screen and (min-width: $medium) {
+          flex-basis: 100%;
+        }
         &::before {
           content: "";
           position: absolute;
@@ -281,6 +370,9 @@ nav {
           width: 1.5625rem;
           background: url(../img/search-svgrepo-com.svg) center / contain
             no-repeat;
+          @media screen and (min-width: $medium) {
+            bottom: 3.125rem;
+          }
         }
         input {
           border-radius: 3.125rem;
@@ -288,6 +380,10 @@ nav {
           padding: 0.5rem 2rem;
           width: 100%;
           outline: none;
+          @media screen and (min-width: $medium) {
+            width: 100%;
+            padding-left: 2.5rem;
+          }
         }
       }
     }

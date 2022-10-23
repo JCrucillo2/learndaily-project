@@ -1,6 +1,8 @@
 body {
   font-family: "Source Sans Pro", sans-serif, sans-serif;
   color: #323232;
+  max-width: 120rem;
+  margin: 0 auto;
 }
 
 h1,
@@ -41,7 +43,14 @@ a {
   top: 14rem;
 }
 .hero-section .learn-daily h2 {
-  font-size: 2.5rem;
+  font-size: clamp(2rem, 11.6vw, 13.25rem);
+}
+@media screen and (min-width: 48rem) {
+  .hero-section .learn-daily div {
+    display: flex;
+    gap: 2rem;
+    margin-left: 10%;
+  }
 }
 .hero-section .learn-daily div p {
   font-family: "Work Sans", sans-serif;
@@ -104,27 +113,58 @@ nav {
   top: 5rem;
   transition: all 0.3s ease;
 }
-nav ul {
+@media screen and (min-width: 48rem) {
+  nav {
+    position: static;
+    min-width: 0;
+    background-color: transparent;
+  }
+}
+nav .nav-menu {
   padding: 0;
   list-style-type: none;
 }
-nav ul li {
+@media screen and (min-width: 48rem) {
+  nav .nav-menu {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+nav .nav-menu li {
   text-align: center;
 }
-nav ul li a {
+@media screen and (min-width: 48rem) {
+  nav .nav-menu li:nth-child(6) a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+nav .nav-menu li a {
   color: #ffffff;
   font-family: "Work Sans", sans-serif;
-  font-size: 2.25rem;
+  font-size: clamp(1rem, 1.9vw, 2.25rem);
   transition: all 0.3s ease;
   display: block;
 }
-nav ul li a:hover {
+nav .nav-menu li a:hover {
   background-color: #ffffff;
   color: #b793b4;
+}
+@media screen and (min-width: 48rem) {
+  nav .nav-menu li a:hover {
+    border-radius: 0.1875rem;
+  }
 }
 
 .nav-toggler {
   cursor: pointer;
+}
+@media screen and (min-width: 48rem) {
+  .nav-toggler {
+    display: none;
+  }
 }
 
 .active nav {
@@ -175,6 +215,23 @@ nav ul li a:hover {
 .grid-container {
   background-color: #f4f4f2;
 }
+@media screen and (min-width: 68.75rem) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, auto);
+    gap: 1rem;
+  }
+}
+.grid-container .grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18.75rem, max-content));
+}
+@media screen and (min-width: 68.75rem) {
+  .grid-container .grid-items:nth-child(1) {
+    display: flex;
+  }
+}
 .grid-container .grid-items .grid-content {
   padding: 3%;
 }
@@ -195,22 +252,47 @@ nav ul li a:hover {
 .quiz {
   background-color: #d2d6a0;
 }
-.quiz div {
+.quiz .quiz-flex {
   padding: 2rem 3%;
 }
-.quiz div div {
+@media screen and (min-width: 48rem) {
+  .quiz .quiz-flex {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 4rem 3%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .quiz .quiz-flex .quiz-take {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1;
+    align-items: center;
+    flex-basis: 50%;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .quiz .quiz-flex .quiz-take p {
+    margin: 0;
+  }
+}
+.quiz .quiz-flex div {
   text-align: center;
 }
-.quiz div div h3 {
+.quiz .quiz-flex div h3 {
   font-family: "Work Sans", sans-serif;
   text-transform: uppercase;
   color: #ffffff;
   font-size: clamp(1.5rem, 4vw, 5rem);
 }
-.quiz div div p {
+.quiz .quiz-flex div p {
   font-family: "Libre Baskerville", serif;
+  font-size: clamp(1.2rem, 1.9vw, 2.25rem);
+  margin-bottom: 1rem;
 }
-.quiz div div a {
+.quiz .quiz-flex div a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,14 +306,20 @@ nav ul li a:hover {
   font-family: "Source Sans Pro", sans-serif;
   text-transform: uppercase;
 }
-.quiz div div a svg {
+@media screen and (min-width: 48rem) {
+  .quiz .quiz-flex div a {
+    width: 15.625rem;
+    margin: 1rem auto;
+  }
+}
+.quiz .quiz-flex div a svg {
   fill: #ffffff;
 }
-.quiz div div a:hover {
+.quiz .quiz-flex div a:hover {
   color: #323232;
   background-color: #ffffff;
 }
-.quiz div div a:hover svg {
+.quiz .quiz-flex div a:hover svg {
   fill: #323232;
 }
 
@@ -244,11 +332,28 @@ nav ul li a:hover {
   text-transform: uppercase;
   font-size: clamp(1.75rem, 3vw, 5rem);
 }
+@media screen and (min-width: 48rem) {
+  .courses .search-area div {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+}
 .courses .search-area div p {
   padding-bottom: 0.75rem;
 }
+@media screen and (min-width: 48rem) {
+  .courses .search-area div p {
+    width: 40.625rem;
+  }
+}
 .courses .search-area div label {
   position: relative;
+}
+@media screen and (min-width: 48rem) {
+  .courses .search-area div label {
+    flex-basis: 100%;
+  }
 }
 .courses .search-area div label::before {
   content: "";
@@ -259,12 +364,23 @@ nav ul li a:hover {
   width: 1.5625rem;
   background: url(../img/search-svgrepo-com.svg) center/contain no-repeat;
 }
+@media screen and (min-width: 48rem) {
+  .courses .search-area div label::before {
+    bottom: 3.125rem;
+  }
+}
 .courses .search-area div label input {
   border-radius: 3.125rem;
   border: 0.125rem solid #745669;
   padding: 0.5rem 2rem;
   width: 100%;
   outline: none;
+}
+@media screen and (min-width: 48rem) {
+  .courses .search-area div label input {
+    width: 100%;
+    padding-left: 2.5rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
