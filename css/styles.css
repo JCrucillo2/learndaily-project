@@ -33,9 +33,14 @@ a {
   background: url(../img/pexels-mikhail-nilov-7827819.webp);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 40vh;
   text-transform: uppercase;
   color: #ffffff;
+}
+@media screen and (min-width: 68.75rem) {
+  .hero-section {
+    height: 60vh;
+  }
 }
 .hero-section .learn-daily {
   font-family: "Work Sans", sans-serif;
@@ -50,11 +55,17 @@ a {
     display: flex;
     gap: 2rem;
     margin-left: 10%;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 68.75rem) {
+  .hero-section .learn-daily div {
+    margin-left: 20%;
   }
 }
 .hero-section .learn-daily div p {
   font-family: "Work Sans", sans-serif;
-  font-size: 1.625rem;
+  font-size: clamp(1.25rem, 3vw, 2.125rem);
   margin-bottom: 0.625rem;
 }
 .hero-section .learn-daily div a {
@@ -68,6 +79,7 @@ a {
   color: #ffffff;
   font-family: "Source Sans Pro", sans-serif;
   transition: all 0.3s ease;
+  font-size: clamp(1rem, 1.9vw, 2.125rem);
 }
 .hero-section .learn-daily div a svg {
   fill: #ffffff;
@@ -225,12 +237,23 @@ nav .nav-menu li a:hover {
 }
 .grid-container .grid-items {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, max-content));
+}
+@media screen and (min-width: 68.75rem) {
+  .grid-container .grid-items {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(7, auto);
+  }
 }
 @media screen and (min-width: 68.75rem) {
   .grid-container .grid-items:nth-child(1) {
     display: flex;
+    grid-column: 1/span 4;
+    grid-row: 1/span 2;
   }
+}
+.grid-container .grid-items:nth-child(2) {
+  grid-column: 5/12;
+  grid-row: 1;
 }
 .grid-container .grid-items .grid-content {
   padding: 3%;
@@ -268,7 +291,7 @@ nav .nav-menu li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 1;
+    margin-top: 1rem;
     align-items: center;
     flex-basis: 50%;
   }
@@ -381,6 +404,130 @@ nav .nav-menu li a:hover {
     width: 100%;
     padding-left: 2.5rem;
   }
+}
+
+.grid-courses {
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 68.75rem) {
+  .grid-courses {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 3%;
+  }
+}
+.grid-courses img {
+  width: 100%;
+  height: 100%;
+}
+.grid-courses .grid-courses-item {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  position: relative;
+  text-transform: uppercase;
+}
+.grid-courses .grid-courses-item:nth-child(2n+1) {
+  color: #ffffff;
+}
+.grid-courses .grid-courses-item:nth-child(2n+1) p {
+  background-color: rgba(187, 138, 207, 0.4);
+  padding: 1rem;
+}
+.grid-courses .grid-courses-item:nth-child(2n+1)::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media screen and (min-width: 68.75rem) {
+  .grid-courses .grid-courses-item:nth-child(2n+1)::before {
+    background: none;
+  }
+}
+.grid-courses .grid-courses-item:nth-child(2n) {
+  color: #745669;
+}
+.grid-courses .grid-courses-item:nth-child(2n) p {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+}
+.grid-courses .grid-courses-item:nth-child(2n)::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+@media screen and (min-width: 68.75rem) {
+  .grid-courses .grid-courses-item:nth-child(2n)::before {
+    background: none;
+  }
+}
+.grid-courses .grid-courses-item img,
+.grid-courses .grid-courses-item p {
+  grid-row: 1/2;
+  align-self: center;
+}
+.grid-courses .grid-courses-item img {
+  grid-column: 1/-1;
+}
+.grid-courses .grid-courses-item p {
+  grid-column: 1/-1;
+  justify-self: center;
+  z-index: 3;
+  font-size: clamp(1.25rem, 4.4vw, 2.125rem);
+  align-self: end;
+  width: 100%;
+  text-align: center;
+}
+
+footer {
+  background-color: #b793b4;
+  padding: 3%;
+}
+footer section {
+  margin-top: 4rem;
+}
+footer section h2 {
+  font-size: clamp(1.7rem, 4.4vw, 5rem);
+  color: #323232;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+footer section .footer-control {
+  display: flex;
+  flex-flow: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+@media screen and (min-width: 68.75rem) {
+  footer section .footer-control {
+    padding: 1rem 0 2rem 0;
+    margin: 0;
+    gap: 8rem;
+  }
+}
+footer section .footer-control div {
+  flex: 0 1 10rem;
+}
+footer section .footer-control div h3 {
+  font-family: "Libre Baskerville", serif;
+  font-size: clamp(1.2rem, 1.9vw, 2.25rem);
+}
+footer section .footer-control div p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: clamp(1.125rem, 1.2vw, 1.3125rem);
+}
+footer section .copyright {
+  margin: 2rem 0;
 }
 
 /*# sourceMappingURL=styles.css.map */

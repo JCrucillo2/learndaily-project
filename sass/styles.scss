@@ -50,9 +50,12 @@ a {
   background: url(../img/pexels-mikhail-nilov-7827819.webp);
   background-size: cover;
   background-position: center;
-  height: 80vh;
+  height: 40vh;
   text-transform: uppercase;
   color: $clr-one;
+  @media screen and (min-width: $large) {
+    height: 60vh;
+  }
   .learn-daily {
     font-family: $font-1;
     position: relative;
@@ -65,10 +68,14 @@ a {
         display: flex;
         gap: 2rem;
         margin-left: 10%;
+        align-items: center;
+      }
+      @media screen and (min-width: $large) {
+        margin-left: 20%;
       }
       p {
         font-family: $font-1;
-        font-size: 1.625rem;
+        font-size: clamp(1.25rem, 3vw, 2.125rem);
         margin-bottom: 0.625rem;
       }
       a {
@@ -82,6 +89,7 @@ a {
         color: $clr-one;
         font-family: $font-2;
         transition: all 0.3s ease;
+        font-size: clamp(1rem, 1.9vw, 2.125rem);
         svg {
           fill: $clr-one;
         }
@@ -235,11 +243,21 @@ nav {
   }
   .grid-items {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, max-content));
+    @media screen and (min-width: $large) {
+      // grid-template-columns: repeat(auto-fit, minmax(18.75rem, max-content));
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(7, auto);
+    }
     &:nth-child(1) {
       @media screen and (min-width: $large) {
         display: flex;
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 2;
       }
+    }
+    &:nth-child(2) {
+      grid-column: 5 / 12;
+      grid-row: 1;
     }
     .grid-content {
       padding: 3%;
@@ -278,7 +296,7 @@ nav {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin-top: 1;
+        margin-top: 1rem;
         align-items: center;
         flex-basis: 50%;
       }
@@ -386,6 +404,125 @@ nav {
           }
         }
       }
+    }
+  }
+}
+
+// grid courses
+.grid-courses {
+  @media screen and (min-width: $large) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 3%;
+  }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+  margin-bottom: 4rem;
+  .grid-courses-item {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    position: relative;
+    text-transform: uppercase;
+    &:nth-child(2n + 1) {
+      color: #ffffff;
+      p {
+        background-color: rgba(187, 138, 207, 0.4);
+        padding: 1rem;
+      }
+      &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @media screen and (min-width: $large) {
+          background: none;
+        }
+      }
+    }
+    &:nth-child(2n) {
+      color: #745669;
+      p {
+        background-color: rgba(255, 255, 255, 0.7);
+        padding: 1rem;
+      }
+
+      &::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @media screen and (min-width: $large) {
+          background: none;
+        }
+      }
+    }
+    img,
+    p {
+      grid-row: 1 / 2;
+      align-self: center;
+    }
+    img {
+      grid-column: 1 / -1;
+    }
+    p {
+      grid-column: 1 / -1;
+      justify-self: center;
+      z-index: 3;
+      font-size: clamp(1.25rem, 4.4vw, 2.125rem);
+      align-self: end;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+// footer
+footer {
+  background-color: $footer-bkgd-clr;
+  padding: 3%;
+  section {
+    margin-top: 4rem;
+    h2 {
+      font-size: clamp(1.7rem, 4.4vw, 5rem);
+      color: $clr-two;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .footer-control {
+      display: flex;
+      flex-flow: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      @media screen and (min-width: $large) {
+        padding: 1rem 0 2rem 0;
+        margin: 0;
+        gap: 8rem;
+      }
+      div {
+        flex: 0 1 10rem;
+        h3 {
+          font-family: $font-3;
+          font-size: clamp(1.2rem, 1.9vw, 2.25rem);
+        }
+        p {
+          font-family: $font-2;
+          font-size: clamp(1.125rem, 1.2vw, 1.3125rem);
+        }
+      }
+    }
+    .copyright {
+      margin: 2rem 0;
     }
   }
 }
