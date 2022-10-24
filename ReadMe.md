@@ -24,16 +24,16 @@ purpose.
 
 ## Checklist
 
-- [ ] Semantic HTML
-- [ ] Descending headings - to give structure to the outline
-- [ ] Validated
-- [ ] Accessibility - on images and hidden elements
-- [ ] Test on voice over
-- [ ] Size tap areas sufficiently depending on their position on a mobile screen
-- [ ] Mobile first Layout mixing CSS Grid, Flexbox, Multicolumns, & Flow (Intrinsic sizing)
-- [ ] Media Queries where needed and to individual components
+- [x] Semantic HTML
+- [x] Descending headings - to give structure to the outline
+- [x] Validated
+- [x] Accessibility - on images and hidden elements
+- [x] Test on voice over
+- [x] Size tap areas sufficiently depending on their position on a mobile screen
+- [x] Mobile first Layout mixing CSS Grid, Flexbox, Multicolumns, & Flow (Intrinsic sizing)
+- [x] Media Queries where needed and to individual components
 - [x] Resize and compress all images
-- [ ] Use modern web images and serve responsive images where needed
-- [ ] Use width and height attributes on the images
-- [ ] Fluid to fixed-width containers
-- [ ] Responsive Typography
+- [x] Use modern web images and serve responsive images where needed
+- [x] Use width and height attributes on the images
+- [x] Fluid to fixed-width containers
+- [x] Responsive Typography
